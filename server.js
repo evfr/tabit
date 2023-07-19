@@ -27,3 +27,5 @@ app.post("/roll", gameController.roll);
 app.listen(port, () => {
   console.log(`Game app listening on port ${port}`)
 });
+
+module.exports = app;

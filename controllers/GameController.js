@@ -9,15 +9,15 @@ class GameController {
     try {
       const {gameId} = req.body;
       if (!gameId) {
-        res.send('very bad request').status(400);
+        res.status(400).send('very bad request');
         return;
       }
       const result = await this.gameService.updateScore(gameId);
       console.log('roll', result);
-      res.send(result).status(200);
+      res.status(200).send(result);
     } catch (error) {
       console.error(error);
-      res.send('internal server error').status(500);
+      res.status(500).send('internal server error');
     }
   };
 }
